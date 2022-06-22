@@ -21,8 +21,8 @@ public class AlticciResource {
     @GET
     @Path("/alticci/{n}")
     public Response alticci(@PathParam("n") Integer n) {
-        if (n < 0) {
-            return Response.ok("The value must be greater than 0").type(MediaType.APPLICATION_JSON_TYPE).build();
+        if (n ==null || n < 0) {
+            return Response.status(Response.Status.BAD_REQUEST).entity("The value must be greater than 0").type(MediaType.APPLICATION_JSON_TYPE).build();
         }
         return Response.ok(alticciService.alticci(n)).build();
     }
