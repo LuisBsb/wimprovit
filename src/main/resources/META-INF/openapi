@@ -1,0 +1,20 @@
+---
+openapi: 3.0.3
+info:
+  title: wimprovit API
+  version: 1.0.0-SNAPSHOT
+paths:
+  /wimprovit/alticci/{n}:
+    get:
+      tags:
+      - Alticci Resource
+      parameters:
+      - name: "n"
+        in: path
+        required: true
+        schema:
+          format: int32
+          type: integer
+      responses:
+        "200":
+          description: OK
